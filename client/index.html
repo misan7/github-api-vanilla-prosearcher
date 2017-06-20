@@ -15,15 +15,22 @@
             <button id="ajaxButton" type="button">Make a request</button>
         </form>
         <div class="pro-info">
-            <h6><strong>@username</strong></h6>
+            <h6>@<strong id="user">@username</strong></h6>
             <h3 id="fullName">Full name</h3>
-            <h6>this is the bio...</h6>
+            <h6 id="bio">this is the bio...</h6>
         </div>
         <div class="repos">
             <ul>
                 <h5>Repositories</h5>
-                <li>Repo 1</li>
+                <li id="results">Repo 1</li>
             </ul>
+        </div>
+        <div>
+        <label for="followers">Followers</label>
+            <span id="followers"></span>
+                    <label for="follows">Follows</label>
+
+            <span id="follows"></span>
         </div>
     </div>
 </body>
