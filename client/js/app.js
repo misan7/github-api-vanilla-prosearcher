@@ -21,14 +21,14 @@ function makeRequest() {
             if (xhr.status === OK){
                 // console.log(JSON.parse(xhr.responseText)) // 'This is the returned text.'
                 var oJson = JSON.parse(xhr.responseText)
+
                 fullName.innerHTML = oJson.name
                 user.innerHTML = oJson.login
                 bio.innerHTML = oJson.bio
-                user.innerHTML = oJson.login
-                user.innerHTML = oJson.login
                 followers.innerHTML = oJson.followers
                 follows.innerHTML = oJson.following
 
+                // "repos_url": "https://api.github.com/users/misan7/repos"
 }
               else if (xhr.status === 404) 
                 alert("The Profile you're searching for doesn't exist")
