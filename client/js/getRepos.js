@@ -6,8 +6,8 @@ function makeRequest() {
     var xhr = new XMLHttpRequest()
 
     username = document.getElementById("username").value
-    var userURL = "https://api.github.com/users/" + username
-    var reposURL = userURL + "/repos"
+    var userURL = `https://api.github.com/users/${ username }`
+    var reposURL = `${ userURL }/repos`
 
     xhr.open('GET', reposURL)
     xhr.send(null)
@@ -17,10 +17,12 @@ function makeRequest() {
         var OK = 200 // status 200 is a successful return.
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                var oJson = JSON.parse(xhr.responseText)
-                console.log("oJson", oJson);
-
-                results.innerHTML = oJson.id
+                var response = JSON.parse(xhr.responseText)
+                results.innerHTML = response.map((repo) => `<li>${ repo.name }<span>${ repo.forks }</span><span>${ repo.stargazers_count }</span></li>`).join('')
+                // for (let i = 0; i < response.length; i++ ){
+                //     results.innerHTML = response[i].name
+                // }
+                 // JSON.parse(JSON.stringify(xhr.responseText))
 
             } else if (xhr.status === 404)
                 alert("The Profile you're searching for doesn't exist")
