@@ -18,7 +18,7 @@ function makeRequest() {
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
                 var response = JSON.parse(xhr.responseText)
-                results.innerHTML = response.map((repo) => `<li>${ repo.name }<span>${ repo.forks }</span><span>${ repo.stargazers_count }</span></li>`).join('')
+                results.innerHTML = response.map((repo) => `<li><div class="repoName"><i class="fa fa-github-alt" aria-hidden="true"></i>${ repo.name }</div><div class="forkStar"><span><i class="fa fa-code-fork fa-2x"></i>${ repo.forks }</span><span><i class="fa fa-star fa-2x"></i>${ repo.stargazers_count }</span></li></div>`).join('')
                 // for (let i = 0; i < response.length; i++ ){
                 //     results.innerHTML = response[i].name
                 // }
