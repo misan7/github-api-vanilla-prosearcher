@@ -24,6 +24,8 @@ function makeRequest() {
                 bio.innerHTML = oJson.bio
                 followers.innerHTML = oJson.followers
                 follows.innerHTML = oJson.following
+                img = oJson.avatar_url
+                document.getElementById('pro-img').style = `background-image: url("${img}")`
 }
               else if (xhr.status === 404) 
                 alert("The Profile you're searching for doesn't exist")

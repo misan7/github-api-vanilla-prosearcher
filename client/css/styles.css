@@ -98,7 +98,7 @@ body {
 
 .pro-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .pro-info .pro-img {
@@ -111,8 +111,12 @@ body {
 }
 
 .pro-info .userInfo {
-    width: 60%;
+    width: 50%;
     padding: 0px 10px 0 10px;
+}
+
+.imgFollow {
+	margin-left: 20px;
 }
 
 .pro-img {
